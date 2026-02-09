@@ -92,6 +92,7 @@ app/
         │       └── MainActivity.kt
         │
         └── AndroidManifest.xml
+```
 
 - **Data**: responsável pelo acesso aos dados (Room).
 - **Domain**: contém as regras de negócio da aplicação.
