@@ -117,7 +117,20 @@ O Firebase é utilizado como o **backend-as-a-service (BaaS)** da aplicação, f
 
 ---
 
-## 7. Arquitetura Utilizada
+### 7. Persistência de Dados
+
+A persistência de dados da aplicação é realizada **localmente**, utilizando o **Room**, 
+biblioteca oficial do Android para abstração do SQLite.
+
+O Room é responsável por:
+- Armazenar as tarefas localmente no dispositivo
+- Mapear entidades para tabelas do banco de dados
+- Fornecer acesso aos dados via DAO
+- Garantir segurança de tipos e consultas em tempo de compilação
+
+---
+
+## 8. Arquitetura Utilizada
 O projeto adota o padrão **MVVM (Model-View-ViewModel)**, garantindo uma separação clara de responsabilidades:
 
 1.  **Model:** Representa a estrutura dos dados (tarefas e usuários).
@@ -126,15 +139,15 @@ O projeto adota o padrão **MVVM (Model-View-ViewModel)**, garantindo uma separa
 
 ---
 
-## 8. Execução do Projeto
+## 9. Execução do Projeto
 
-### 8.1 Pré-requisitos
+### 9.1 Pré-requisitos
 * Android Studio instalado e configurado.
 * Android SDK atualizado.
 * Uma conta ativa no [Firebase Console](https://console.firebase.google.com/).
 * Dispositivo físico ou emulador configurado.
 
-### 8.2 Passos para Execução
+### 9.2 Passos para Execução
 1.  **Clonar o repositório:**
     ```bash
     git clone [https://github.com/EduardooMarson/TodoListFirebase.git](https://github.com/EduardooMarson/TodoListFirebase.git)
@@ -146,5 +159,5 @@ O projeto adota o padrão **MVVM (Model-View-ViewModel)**, garantindo uma separa
 
 ---
 
-## 9. Observações
+## 10. Observações
 Este projeto foi desenvolvido para **fins educacionais**, com o foco principal em praticar conceitos de desenvolvimento Android nativo, arquitetura de software e a integração prática com serviços de infraestrutura em nuvem.
