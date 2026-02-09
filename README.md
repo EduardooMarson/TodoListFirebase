@@ -40,19 +40,64 @@ Desenvolver um aplicativo funcional para gerenciamento de tarefas utilizando o e
 O projeto segue a estrutura padrão recomendada para garantir a escalabilidade:
 
 
-TodoListFirebase/
-├── app/
-│   ├── src/
-│   │   ├── main/
-│   │   │   ├── java/
-│   │   │   │   ├── ui/         # Telas e componentes visuais
-│   │   │   │   ├── viewmodel/  # Lógica entre UI e Dados
-│   │   │   │   └── data/       # Modelos e Integração Firebase
-│   │   │   ├── res/            # Recursos (Layouts, Drawables)
-│   │   │   └── AndroidManifest.xml
-│   └── build.gradle
-├── build.gradle
-└── README.md
+```text
+app/
+└── src/
+    └── main/
+        ├── java/
+        │   └── com.eduardoomarson.todolistfirebase/
+        │       ├── authentication/      # Estado e ViewModel de autenticação
+        │       │   ├── AuthState.kt
+        │       │   └── AuthViewModel.kt
+        │       │
+        │       ├── data/                # Camada de dados (Room / Firebase)
+        │       │   ├── TodoDao.kt
+        │       │   ├── TodoDatabase.kt
+        │       │   ├── TodoEntity.kt
+        │       │   ├── TodoRepository.kt
+        │       │   └── TodoRepositoryImpl.kt
+        │       │
+        │       ├── domain/              # Regras de negócio
+        │       │   └── Todo.kt
+        │       │
+        │       ├── navigation/          # Navegação da aplicação
+        │       │   └── TodoNavHost.kt
+        │       │
+        │       ├── ui/
+        │       │   ├── components/      # Componentes reutilizáveis
+        │       │   │   └── TodoItem.kt
+        │       │   │
+        │       │   └── feature/         # Telas organizadas por funcionalidade
+        │       │       ├── addedit/
+        │       │       │   ├── AddEditEvent.kt
+        │       │       │   ├── AddEditScreen.kt
+        │       │       │   └── AddEditViewModel.kt
+        │       │       │
+        │       │       ├── list/
+        │       │       │   ├── ListEvent.kt
+        │       │       │   ├── ListScreen.kt
+        │       │       │   └── ListViewModel.kt
+        │       │       │
+        │       │       ├── login/
+        │       │       │   └── LoginScreen.kt
+        │       │       │
+        │       │       ├── signup/
+        │       │       │   └── SignupScreen.kt
+        │       │       │
+        │       │       └── forgotpassword/
+        │       │           └── ForgotPasswordScreen.kt
+        │       │
+        │       ├── theme/               # Tema do Jetpack Compose
+        │       ├── UiEvent.kt            # Eventos globais de UI
+        │       └── MainActivity.kt
+        │
+        └── AndroidManifest.xml
+
+- **Data**: responsável pelo acesso aos dados (Room).
+- **Domain**: contém as regras de negócio da aplicação.
+- **UI**: implementada com Jetpack Compose, organizada por features.
+- **ViewModels**: fazem a ponte entre UI e dados, seguindo o padrão MVVM.
+- **Navigation**: centraliza o controle de rotas da aplicação.
 
 ## 5. Funcionalidades Implementadas
 * **Autenticação:** Cadastro e login via e-mail e senha com Firebase Authentication.
