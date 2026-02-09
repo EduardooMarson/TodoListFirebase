@@ -46,11 +46,11 @@ app/
     └── main/
         ├── java/
         │   └── com.eduardoomarson.todolistfirebase/
-        │       ├── authentication/      # Estado e ViewModel de autenticação
+        │       ├── authentication/      # Estado e ViewModel de autenticação (Firebase)
         │       │   ├── AuthState.kt
         │       │   └── AuthViewModel.kt
         │       │
-        │       ├── data/                # Camada de dados (Room / Firebase)
+        │       ├── data/                # Camada de dados (Room)
         │       │   ├── TodoDao.kt
         │       │   ├── TodoDatabase.kt
         │       │   ├── TodoEntity.kt
